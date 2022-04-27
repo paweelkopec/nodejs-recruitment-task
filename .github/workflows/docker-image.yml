@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Test the Docker app
-      run: docker-compose build && JWT_SECRET=secret docker-compose run app npm run test
+    - run: docker-compose build
+    - run: JWT_SECRET=secret docker-compose run app npm run test
