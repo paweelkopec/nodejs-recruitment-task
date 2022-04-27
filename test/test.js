@@ -27,7 +27,7 @@ describe('POST /login', function () {
 // create movie
 describe('POST /movies', function () {
     //new
-    const newMove = {title: "Everest"};
+    const newMove = {title: "Forrest Gump"};
     it('responds with json', function (done) {
         const token = auth(user.username, user.password);
         request(app)
@@ -54,7 +54,9 @@ describe('GET /movies', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) return done(err);
+                if (err) {
+                    return done(err);
+                }
                 done();
                 mongoose.connection.close();
                 app.server.close();
