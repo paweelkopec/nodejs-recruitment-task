@@ -75,7 +75,7 @@ app.post("/movies", verifyToken, async (req, res, next) => {
         var filter = {user_id: req.user.userId, title: title};
         const userMovies = await Movie.count(filter);
         if (userMovies !== 0) {
-            throw new Error("Movie " + title + " already exist");
+            return res.status(400).json({error: "Movie " + title + " already exist"});
         }
         //user limit
         if (req.user.role == "basic") {

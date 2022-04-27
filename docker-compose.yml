@@ -14,13 +14,14 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
       - published: ${APP_PORT:-3000}
         target: 3000
     volumes:
-      - .:/app/
-      - /node_modules
+      - ./src:/app/src
+      - ./test:/app/test
+    #  - /node_modules
     env_file: ./.env
     restart: unless-stopped
     environment:
