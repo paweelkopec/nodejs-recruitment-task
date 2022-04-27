@@ -7,7 +7,7 @@ const {
 } = process.env;
 const auth = authFactory(JWT_SECRET);
 //user
-const user = {username: 'premium-jim', password: 'GBLtTyq3E_UNjFnpo9m6'}
+const user = {username: 'premium-jim', password: 'GBLtTyq3E_UNjFnpo9m6'};
 //login
 describe('POST /login', function () {
     it('responds with json', function (done) {
