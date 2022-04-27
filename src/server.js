@@ -143,7 +143,7 @@ app.use((error, _, res, __) => {
     console.error(error);
     return res.status(500).json({error: "internal server error"});
 });
-
-module.exports = app.listen(PORT, () => {
+app.server =  app.listen(PORT, () => {
     console.log(`auth svc running at port ${PORT}`);
 });
+module.exports = app;

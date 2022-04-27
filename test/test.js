@@ -1,5 +1,6 @@
 var app = require('../src/server.js'),
     request = require('supertest');
+const mongoose = require("mongoose");
 //auth
 const {authFactory, AuthError} = require("../src/auth");
 const {
@@ -55,6 +56,8 @@ describe('GET /movies', function () {
             .end(function (err, res) {
                 if (err) return done(err);
                 done();
+                mongoose.connection.close();
+                app.server.close();
             });
     });
 });
