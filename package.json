@@ -17,7 +17,10 @@
     "got": "^12.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.1",
-    "request": "^2.88.2"
+    "npm": "^8.7.0",
+    "request": "^2.88.2",
+    "run": "^1.4.0",
+    "test": "^0.6.0"
   },
   "devDependencies": {
     "chai": "^4.3.6",
