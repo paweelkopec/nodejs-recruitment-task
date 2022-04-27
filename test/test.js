@@ -28,7 +28,7 @@ describe('POST /login', function () {
 describe('POST /movies', function () {
     this.timeout(6000);
     //new move
-    const newMove = {title: "Fight Club"};
+    const newMove = {title: "Inception"};
     it('responds with json', function (done) {
         const token = auth(user.username, user.password);
         request(app)
